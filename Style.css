@@ -1,0 +1,166 @@
+/* Variáveis de Alto Contraste */
+:root {
+    --fundo-principal: #000000;      /* Preto profundo para o fundo */
+    --fundo-secundario: #1A1A1A;     /* Cinza muito escuro para seções */
+    --texto-principal: #FFFFFF;      /* Branco puro para leitura fluida */
+    --texto-destaque: #FFFF00;       /* Amarelo vibrante para títulos/links */
+    --cor-foco: #00FFFF;             /* Ciano para bordas de foco */
+}
+
+/* Reset básico e tipografia sem serifa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    font-size: 18px; /* Fonte levemente maior para acessibilidade */
+}
+
+/* Foco para navegação por teclado */
+*:focus {
+    outline: 4px solid var(--cor-foco);
+    outline-offset: 4px;
+}
+
+header {
+    background-color: var(--fundo-secundario);
+    padding: 20px;
+    border-bottom: 4px solid var(--texto-destaque);
+}
+
+.cabecalho-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logos .logo {
+    max-width: 120px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.identificacao h1 {
+    color: var(--texto-destaque);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.aluno-destaque {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.foto-perfil, .foto-membro {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--texto-destaque);
+    object-fit: cover;
+}
+
+.controles-acessibilidade {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button#btn-audio {
+    background-color: var(--texto-destaque);
+    color: var(--fundo-principal);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+button#btn-audio:hover {
+    transform: scale(1.05);
+}
+
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--fundo-secundario);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: var(--texto-destaque);
+    margin-bottom: 15px;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--texto-destaque);
+    padding-bottom: 5px;
+}
+
+.lista-projetos {
+    list-style-type: none;
+}
+
+.lista-projetos li {
+    margin: 15px 0;
+}
+
+a {
+    color: var(--texto-destaque);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+a:hover, a:focus {
+    color: var(--cor-foco);
+    text-decoration: underline;
+}
+
+.grid-membros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.membro-card {
+    background-color: var(--fundo-principal);
+    padding: 20px;
+    border: 2px solid var(--texto-destaque);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.membro-card h3 {
+    color: var(--texto-destaque);
+    margin: 15px 0;
+}
+
+.btn-lattes {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--fundo-secundario);
+    border: 2px solid var(--texto-destaque);
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--fundo-secundario);
+    border-top: 4px solid var(--texto-destaque);
+}

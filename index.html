@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube RISO - Acessibilidade e Inclusão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabecalho-container">
+            <div class="logos" tabindex="0">
+                <!-- Substitua pelo caminho das suas imagens -->
+                <img src="logo-clube-riso.png" alt="Logo do Clube RISO" class="logo">
+                <img src="logo-cemag.png" alt="Logo do CEMAG" class="logo">
+            </div>
+            <div class="identificacao">
+                <h1 class="leitura-audio" tabindex="0">Professora Orientadora: Janinha Aparecida Pereira</h1>
+                <div class="aluno-destaque">
+                    <img src="sua-foto.png" alt="Sua Foto" class="foto-perfil">
+                    <p class="leitura-audio" tabindex="0">Bem-vindo(a) ao nosso portal!</p>
+                </div>
+            </div>
+        </div>
+        <div class="controles-acessibilidade">
+            <button id="btn-audio" class="leitura-audio" aria-label="Ativar ou desativar o áudio do site" tabindex="0">
+                🔊 Ativar Leitura por Áudio
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="apresentacao">
+            <h2 class="leitura-audio" tabindex="0">Sobre o Clube RISO</h2>
+            <p class="leitura-audio" tabindex="0">
+                Criado em 2024 no Colégio Estadual Manoel Antônio Gomes, em Reserva, o clube <strong>RISO</strong> significa <strong>Robótica Inclusiva e Social Transformando Vidas</strong>. Nosso objetivo é promover a inclusão através da tecnologia.
+            </p>
+        </section>
+
+        <section id="projetos">
+            <h2 class="leitura-audio" tabindex="0">Projetos - FECCI e FICIências</h2>
+            <ul class="lista-projetos">
+                <li><a href="#link-semaforo" class="leitura-audio" tabindex="0">Semáforo Inteligente e Assistivo</a></li>
+                <li><a href="#link-mao" class="leitura-audio" tabindex="0">Mão Robótica</a></li>
+                <li><a href="#link-varal" class="leitura-audio" tabindex="0">Varal Automático Assistivo</a></li>
+                <li><a href="#link-caixa" class="leitura-audio" tabindex="0">Caixa de Cultivo Automatizada Assistiva</a></li>
+            </ul>
+        </section>
+
+        <section id="membros">
+            <h2 class="leitura-audio" tabindex="0">Nossos Clubistas</h2>
+            <div class="grid-membros">
+                
+                <!-- Membro 1 -->
+                <article class="membro-card" tabindex="0">
+                    <img src="foto-arthur.png" alt="Foto de Arthur Eduardo Porfirio Parra" class="foto-membro">
+                    <h3 class="leitura-audio">Arthur Eduardo Porfirio Parra</h3>
+                    <p class="leitura-audio">Idade: 15 anos | 1º ano. Gosto de estudar matemática e robótica. Meus objetivos incluem estudar, trabalhar e morar fora do país.</p>
+                    <a href="link-lattes-arthur" class="btn-lattes leitura-audio">Currículo Lattes</a>
+                </article>
+
+                <!-- Membro 2 -->
+                <article class="membro-card" tabindex="0">
+                    <img src="foto-barbara.png" alt="Foto de Bárbara Lavinia Azevedo Costa" class="foto-membro">
+                    <h3 class="leitura-audio">Bárbara Lavinia Azevedo Costa</h3>
+                    <p class="leitura-audio">Idade: 16 anos | 2ºB. Adoro aprender como o mundo funciona e descobrir coisas novas. Quero me formar em engenharia mecatrônica.</p>
+                    <a href="link-lattes-barbara" class="btn-lattes leitura-audio">Currículo Lattes</a>
+                </article>
+
+                <!-- Membro 3 -->
+                <article class="membro-card" tabindex="0">
+                    <img src="foto-lucas.png" alt="Foto de Lucas Seteliki da Silveira" class="foto-membro">
+                    <h3 class="leitura-audio">Lucas Seteliki da Silveira</h3>
+                    <p class="leitura-audio">Idade: 17 anos | 3ºB. Tenho interesse na área musical e tecnológica. Minha meta é ser um mecânico de motos excelente.</p>
+                    <a href="link-lattes-lucas" class="btn-lattes leitura-audio">Currículo Lattes</a>
+                </article>
+
+                <!-- Para adicionar mais membros como a Nataly, Kemilly, etc., basta copiar e colar a tag <article> acima e preencher com os dados -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="leitura-audio" tabindex="0">&copy; 2026 Clube RISO - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
