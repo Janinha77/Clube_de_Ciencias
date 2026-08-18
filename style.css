@@ -3,7 +3,7 @@
 ========================================= */
 :root {
     --fundo-principal: #000000;      /* Preto profundo para o fundo */
-    --fundo-secundario: #1A1A1A;     /* Cinza muito escuro para seções */
+    --fundo-secundario: #1A1A1A;     /* Cinza muito escuro para secções */
     --texto-principal: #FFFFFF;      /* Branco puro para leitura fluida */
     --texto-destaque: #FFFF00;       /* Amarelo vibrante para títulos/links */
     --cor-foco: #00FFFF;             /* Ciano para bordas de foco */
@@ -44,35 +44,40 @@ header.header-profissional {
 
 .cabecalho-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém as pontas separadas e o centro no meio */
     align-items: center;
-    flex-wrap: wrap; /* Para se adaptar em celulares */
+    flex-wrap: wrap; 
     gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Tamanho das Logos Menores e Padronizadas */
-.logos {
+/* Blocos de logos nas laterais */
+.bloco-logos {
     display: flex;
     gap: 15px;
     align-items: center;
+    justify-content: center;
 }
 
-.logos .logo {
-    max-width: 90px; /* Limita o tamanho das logos */
-    height: auto;
-    background-color: #FFFFFF; /* Fundo branco para destaque */
-    padding: 5px;
-    border-radius: 8px;
-    border: 2px solid var(--texto-destaque);
+/* Logos padronizadas e sem fundo branco */
+.bloco-logos .logo {
+    width: 85px;         /* Largura fixa */
+    height: 85px;        /* Altura fixa */
+    object-fit: contain; /* Faz a imagem caber no espaço sem distorcer */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem bordas para um visual mais limpo */
 }
 
 /* Área de Identificação Central */
 .identificacao {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o texto e os botões */
     text-align: center;
     padding: 0 20px;
+    gap: 10px;
 }
 
 .titulo-principal {
@@ -87,18 +92,18 @@ header.header-profissional {
     color: var(--texto-principal);
     font-size: 1.6rem;
     font-weight: 500;
-    margin-bottom: 15px;
 }
 
-/* Card interno da foto do aluno no cabeçalho */
+/* Card interno da foto do aluno/professora no cabeçalho */
 .aluno-destaque {
     display: inline-flex;
     align-items: center;
     gap: 15px;
     background-color: #000000;
     padding: 10px 25px;
-    border-radius: 50px; /* Formato de pílula arredondada */
+    border-radius: 50px;
     border: 2px solid var(--texto-destaque);
+    margin-top: 5px;
 }
 
 .foto-perfil-pequena {
@@ -116,6 +121,10 @@ header.header-profissional {
 }
 
 /* Botão de Acessibilidade no Cabeçalho */
+.controles-acessibilidade {
+    margin-top: 15px;
+}
+
 .btn-acessibilidade {
     background-color: var(--texto-destaque);
     color: #000000;
@@ -137,7 +146,7 @@ header.header-profissional {
 }
 
 /* =========================================
-   CONTEÚDO PRINCIPAL (MAIN) E SEÇÕES
+   CONTEÚDO PRINCIPAL (MAIN) E SECÇÕES
 ========================================= */
 main {
     padding: 30px 20px;
@@ -234,7 +243,7 @@ footer {
 }
 
 /* =========================================
-   RESPONSIVIDADE (CELULARES E TABLETS)
+   RESPONSIVIDADE (TELEMÓVEIS E TABLETS)
 ========================================= */
 @media (max-width: 1024px) {
     .cabecalho-container {
@@ -242,8 +251,9 @@ footer {
         text-align: center;
     }
     
-    .logos {
+    .bloco-logos {
         justify-content: center;
+        margin-bottom: 15px;
     }
     
     .aluno-destaque {

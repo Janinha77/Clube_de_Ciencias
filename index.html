@@ -10,27 +10,34 @@
         <header class="header-profissional">
         <div class="cabecalho-container">
             
-            <div class="logos" tabindex="0">
+            <!-- LADO ESQUERDO: 2 Logos -->
+            <div class="bloco-logos" tabindex="0">
                 <img src="logo-clube-riso.png" alt="Logo do Clube RISO" class="logo">
                 <img src="cemag.png" alt="Logo do CEMAG" class="logo">
-                <img src="Napi.jpeg" alt="Logo do Napi" class="logo">
-                <img src="parana.jpeg" alt="Logo do Paraná faz Ciência" class="logo">
             </div>
             
+            <!-- CENTRO: Textos e Botão de Áudio -->
             <div class="identificacao">
                 <h1 class="leitura-audio titulo-principal" tabindex="0">Clube RISO</h1>
                 <h2 class="leitura-audio subtitulo" tabindex="0">Prof. Orientadora: Janinha Aparecida Pereira</h2>
                 
                 <div class="aluno-destaque" tabindex="0">
-                    <img src="janinha.png" alt="Foto do aluno" class="foto-perfil-pequena">
+                    <img src="janinha.png" alt="Foto da professora" class="foto-perfil-pequena">
                     <p class="leitura-audio texto-boas-vindas">Bem-vindo(a) ao nosso portal!</p>
+                </div>
+
+                <!-- Botão de áudio agora fica centralizado e alinhado -->
+                <div class="controles-acessibilidade">
+                    <button id="btn-audio" class="leitura-audio btn-acessibilidade" aria-label="Ativar ou desativar o áudio do site" tabindex="0">
+                        🔊 Áudio
+                    </button>
                 </div>
             </div>
 
-            <div class="controles-acessibilidade">
-                <button id="btn-audio" class="leitura-audio btn-acessibilidade" aria-label="Ativar ou desativar o áudio do site" tabindex="0">
-                    🔊 Áudio
-                </button>
+            <!-- LADO DIREITO: 2 Logos -->
+            <div class="bloco-logos" tabindex="0">
+                <img src="Napi.jpeg" alt="Logo do Napi" class="logo">
+                <img src="parana.jpeg" alt="Logo do Paraná faz Ciência" class="logo">
             </div>
 
         </div>
