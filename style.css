@@ -1,4 +1,6 @@
-/* Variáveis de Alto Contraste */
+/* =========================================
+   VARIÁVEIS DE ALTO CONTRASTE (ACESSIBILIDADE)
+========================================= */
 :root {
     --fundo-principal: #000000;      /* Preto profundo para o fundo */
     --fundo-secundario: #1A1A1A;     /* Cinza muito escuro para seções */
@@ -7,7 +9,9 @@
     --cor-foco: #00FFFF;             /* Ciano para bordas de foco */
 }
 
-/* Reset básico e tipografia sem serifa */
+/* =========================================
+   RESET BÁSICO E TIPOGRAFIA
+========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -28,67 +32,113 @@ body {
     outline-offset: 4px;
 }
 
-header {
+/* =========================================
+   CABEÇALHO PROFISSIONAL
+========================================= */
+header.header-profissional {
     background-color: var(--fundo-secundario);
-    padding: 20px;
-    border-bottom: 4px solid var(--texto-destaque);
+    padding: 20px 40px;
+    border-bottom: 6px solid var(--texto-destaque);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
 }
 
 .cabecalho-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Para se adaptar em celulares */
     gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tamanho das Logos Menores e Padronizadas */
+.logos {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 .logos .logo {
-    max-width: 80 px;
+    max-width: 90px; /* Limita o tamanho das logos */
     height: auto;
-    margin-right: 15px;
+    background-color: #FFFFFF; /* Fundo branco para destaque */
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid var(--texto-destaque);
 }
 
-.identificacao h1 {
+/* Área de Identificação Central */
+.identificacao {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.titulo-principal {
     color: var(--texto-destaque);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
+.subtitulo {
+    color: var(--texto-principal);
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Card interno da foto do aluno no cabeçalho */
 .aluno-destaque {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 15px;
+    background-color: #000000;
+    padding: 10px 25px;
+    border-radius: 50px; /* Formato de pílula arredondada */
+    border: 2px solid var(--texto-destaque);
 }
 
-.foto-perfil, .foto-membro {
-    width: 100px;
-    height: 100px;
+.foto-perfil-pequena {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 3px solid var(--texto-destaque);
+    border: 2px solid var(--texto-destaque);
     object-fit: cover;
 }
 
-.controles-acessibilidade {
-    margin-top: 20px;
-    text-align: center;
+.texto-boas-vindas {
+    color: var(--texto-principal);
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
-button#btn-audio {
+/* Botão de Acessibilidade no Cabeçalho */
+.btn-acessibilidade {
     background-color: var(--texto-destaque);
-    color: var(--fundo-principal);
-    font-size: 1.2rem;
+    color: #000000;
+    font-size: 1.3rem;
     font-weight: bold;
     padding: 15px 30px;
-    border: none;
+    border: 3px solid #000000;
     cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s;
+    border-radius: 12px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-button#btn-audio:hover {
+.btn-acessibilidade:hover, .btn-acessibilidade:focus {
+    background-color: #000000;
+    color: var(--texto-destaque);
+    border: 3px solid var(--texto-destaque);
     transform: scale(1.05);
 }
 
+/* =========================================
+   CONTEÚDO PRINCIPAL (MAIN) E SEÇÕES
+========================================= */
 main {
     padding: 30px 20px;
     max-width: 1200px;
@@ -110,6 +160,9 @@ h2 {
     padding-bottom: 5px;
 }
 
+/* =========================================
+   LISTA DE PROJETOS E LINKS
+========================================= */
 .lista-projetos {
     list-style-type: none;
 }
@@ -130,6 +183,9 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
+/* =========================================
+   ÁREA DOS MEMBROS (CLUBISTAS)
+========================================= */
 .grid-membros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -142,6 +198,15 @@ a:hover, a:focus {
     border: 2px solid var(--texto-destaque);
     border-radius: 10px;
     text-align: center;
+}
+
+/* Foto redonda para os membros na apresentação */
+.foto-membro {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--texto-destaque);
+    object-fit: cover;
 }
 
 .membro-card h3 {
@@ -158,9 +223,30 @@ a:hover, a:focus {
     border-radius: 5px;
 }
 
+/* =========================================
+   RODAPÉ (FOOTER)
+========================================= */
 footer {
     text-align: center;
     padding: 20px;
     background-color: var(--fundo-secundario);
     border-top: 4px solid var(--texto-destaque);
+}
+
+/* =========================================
+   RESPONSIVIDADE (CELULARES E TABLETS)
+========================================= */
+@media (max-width: 1024px) {
+    .cabecalho-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logos {
+        justify-content: center;
+    }
+    
+    .aluno-destaque {
+        margin: 0 auto;
+    }
 }
