@@ -1,262 +1,112 @@
-/* =========================================
-   VARIÁVEIS DE ALTO CONTRASTE (ACESSIBILIDADE)
-========================================= */
 :root {
-    --fundo-principal: #000000;      /* Preto profundo para o fundo */
-    --fundo-secundario: #1A1A1A;     /* Cinza muito escuro para secções */
-    --texto-principal: #FFFFFF;      /* Branco puro para leitura fluida */
-    --texto-destaque: #FFFF00;       /* Amarelo vibrante para títulos/links */
-    --cor-foco: #00FFFF;             /* Ciano para bordas de foco */
+    --bg-claro: #F4F7F6;
+    --texto-escuro: #2C3E50;
+    --cor-primaria: #0056B3; /* Azul tecnologia */
+    --cor-secundaria: #6A1B9A; /* Roxo inovação */
+    --foco: #FF9800; /* Laranja para foco acessível */
+    --tamanho-fonte: 18px;
 }
 
-/* =========================================
-   RESET BÁSICO E TIPOGRAFIA
-========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Modo Alto Contraste via classe JS */
+body.alto-contraste {
+    --bg-claro: #121212;
+    --texto-escuro: #FFFFFF;
+    --cor-primaria: #4FC3F7;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Arial', 'Helvetica', sans-serif;
-    background-color: var(--fundo-principal);
-    color: var(--texto-principal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-claro);
+    color: var(--texto-escuro);
+    font-size: var(--tamanho-fonte);
     line-height: 1.6;
-    font-size: 18px; /* Fonte levemente maior para acessibilidade */
+    transition: all 0.3s ease;
 }
 
-/* Foco para navegação por teclado */
 *:focus {
-    outline: 4px solid var(--cor-foco);
+    outline: 4px solid var(--foco);
     outline-offset: 4px;
 }
 
-/* =========================================
-   CABEÇALHO PROFISSIONAL
-========================================= */
-header.header-profissional {
-    background-color: var(--fundo-secundario);
-    padding: 20px 40px;
-    border-bottom: 6px solid var(--texto-destaque);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+/* Cabeçalho 3D */
+.header-3d {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--cor-primaria);
+    padding: 20px 40px 0;
 }
 
 .cabecalho-container {
     display: flex;
-    justify-content: space-between; /* Mantém as pontas separadas e o centro no meio */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
-    gap: 20px;
+    flex-wrap: wrap;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Blocos de logos nas laterais */
-.bloco-logos {
+.bloco-logos { display: flex; gap: 15px; }
+.logo { width: 80px; height: 80px; object-fit: contain; }
+
+.identificacao { text-align: center; flex: 1; }
+.identificacao h1 { color: var(--cor-primaria); font-size: 2.2rem; }
+.identificacao h2 { color: var(--cor-secundaria); font-size: 1.2rem; }
+
+/* Menu */
+.menu {
     display: flex;
-    gap: 15px;
-    align-items: center;
     justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin-top: 20px;
+    padding-bottom: 15px;
 }
 
-/* Logos padronizadas e sem fundo branco */
-.bloco-logos .logo {
-    width: 85px;         /* Largura fixa */
-    height: 85px;        /* Altura fixa */
-    object-fit: contain; /* Faz a imagem caber no espaço sem distorcer */
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem bordas para um visual mais limpo */
+.menu a {
+    text-decoration: none;
+    color: var(--texto-escuro);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
-/* Área de Identificação Central */
-.identificacao {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o texto e os botões */
-    text-align: center;
-    padding: 0 20px;
-    gap: 10px;
-}
+.menu a:hover { background: var(--cor-primaria); color: #fff; }
 
-.titulo-principal {
-    color: var(--texto-destaque);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-.subtitulo {
-    color: var(--texto-principal);
-    font-size: 1.6rem;
-    font-weight: 500;
-}
-
-/* Card interno da foto do aluno/professora no cabeçalho */
-.aluno-destaque {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background-color: #000000;
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: 2px solid var(--texto-destaque);
-    margin-top: 5px;
-}
-
-.foto-perfil-pequena {
+/* Botão Acessibilidade */
+#btn-acessibilidade-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    border: 2px solid var(--texto-destaque);
-    object-fit: cover;
-}
-
-.texto-boas-vindas {
-    color: var(--texto-principal);
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-/* Botão de Acessibilidade no Cabeçalho */
-.controles-acessibilidade {
-    margin-top: 15px;
-}
-
-.btn-acessibilidade {
-    background-color: var(--texto-destaque);
-    color: #000000;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 15px 30px;
-    border: 3px solid #000000;
     cursor: pointer;
-    border-radius: 12px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
 }
 
-.btn-acessibilidade:hover, .btn-acessibilidade:focus {
-    background-color: #000000;
-    color: var(--texto-destaque);
-    border: 3px solid var(--texto-destaque);
-    transform: scale(1.05);
-}
-
-/* =========================================
-   CONTEÚDO PRINCIPAL (MAIN) E SECÇÕES
-========================================= */
-main {
-    padding: 30px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section {
-    background-color: var(--fundo-secundario);
-    padding: 25px;
-    margin-bottom: 30px;
+#painel-acessibilidade {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: white;
+    padding: 15px;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
 }
 
-h2 {
-    color: var(--texto-destaque);
-    margin-bottom: 15px;
-    font-size: 2rem;
-    border-bottom: 2px solid var(--texto-destaque);
-    padding-bottom: 5px;
-}
+.oculto { display: none !important; }
 
-/* =========================================
-   LISTA DE PROJETOS E LINKS
-========================================= */
-.lista-projetos {
-    list-style-type: none;
-}
-
-.lista-projetos li {
-    margin: 15px 0;
-}
-
-a {
-    color: var(--texto-destaque);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-a:hover, a:focus {
-    color: var(--cor-foco);
-    text-decoration: underline;
-}
-
-/* =========================================
-   ÁREA DOS MEMBROS (CLUBISTAS)
-========================================= */
-.grid-membros {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.membro-card {
-    background-color: var(--fundo-principal);
-    padding: 20px;
-    border: 2px solid var(--texto-destaque);
-    border-radius: 10px;
-    text-align: center;
-}
-
-/* Foto redonda para os membros na apresentação */
-.foto-membro {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid var(--texto-destaque);
-    object-fit: cover;
-}
-
-.membro-card h3 {
-    color: var(--texto-destaque);
-    margin: 15px 0;
-}
-
-.btn-lattes {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: var(--fundo-secundario);
-    border: 2px solid var(--texto-destaque);
-    border-radius: 5px;
-}
-
-/* =========================================
-   RODAPÉ (FOOTER)
-========================================= */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--fundo-secundario);
-    border-top: 4px solid var(--texto-destaque);
-}
-
-/* =========================================
-   RESPONSIVIDADE (TELEMÓVEIS E TABLETS)
-========================================= */
-@media (max-width: 1024px) {
-    .cabecalho-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .bloco-logos {
-        justify-content: center;
-        margin-bottom: 15px;
-    }
-    
-    .aluno-destaque {
-        margin: 0 auto;
-    }
-}
+main { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+section { background: #fff; padding: 25px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }

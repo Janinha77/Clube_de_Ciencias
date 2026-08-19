@@ -1,61 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Variável para controlar se o áudio está ativo
-    let audioAtivo = false;
+    // Controle do Painel
+    const btnAcessibilidade = document.getElementById('btn-acessibilidade-fixo');
+    const painel = document.getElementById('painel-acessibilidade');
     
-    // Objeto de síntese de fala do navegador
-    const sinteseFala = window.speechSynthesis;
-    const btnAudio = document.getElementById('btn-audio');
+    btnAcessibilidade.addEventListener('click', () => {
+        painel.classList.toggle('oculto');
+    });
 
-    // Alternar estado do áudio
-    btnAudio.addEventListener('click', () => {
-        audioAtivo = !audioAtivo;
-        
-        if (audioAtivo) {
-            btnAudio.textContent = "🔈 Áudio Ativado - Passe o mouse nos textos";
-            btnAudio.style.backgroundColor = "var(--cor-foco)";
+    // Aumento/Diminuição de Fonte
+    let tamanhoAtual = 18;
+    document.getElementById('btn-fonte-mais').addEventListener('click', () => {
+        if(tamanhoAtual < 26) tamanhoAtual += 2;
+        document.documentElement.style.setProperty('--tamanho-fonte', `${tamanhoAtual}px`);
+    });
+
+    document.getElementById('btn-fonte-menos').addEventListener('click', () => {
+        if(tamanhoAtual > 14) tamanhoAtual -= 2;
+        document.documentElement.style.setProperty('--tamanho-fonte', `${tamanhoAtual}px`);
+    });
+
+    // Alto Contraste
+    document.getElementById('btn-contraste').addEventListener('click', () => {
+        document.body.classList.toggle('alto-contraste');
+    });
+
+    // Lógica Básica de Leitura
+    const sinteseFala = window.speechSynthesis;
+    let lendo = false;
+    document.getElementById('btn-ouvir').addEventListener('click', () => {
+        if (lendo) {
+            sinteseFala.cancel();
+            lendo = false;
         } else {
-            btnAudio.textContent = "🔊 Ativar Leitura por Áudio";
-            btnAudio.style.backgroundColor = "var(--texto-destaque)";
-            sinteseFala.cancel(); // Para qualquer leitura em andamento
+            const texto = document.body.innerText;
+            const fala = new SpeechSynthesisUtterance(texto);
+            fala.lang = 'pt-BR';
+            sinteseFala.speak(fala);
+            lendo = true;
         }
     });
-
-    // Seleciona todos os elementos que devem ser lidos
-    const elementosLeitura = document.querySelectorAll('.leitura-audio');
-
-    elementosLeitura.forEach(elemento => {
-        // Leitura ao passar o mouse (Mouseover)
-        elemento.addEventListener('mouseenter', () => {
-            if (audioAtivo) {
-                lerTexto(elemento.textContent);
-            }
-        });
-
-        // Interrompe a leitura ao tirar o mouse (Mouseleave)
-        elemento.addEventListener('mouseleave', () => {
-            sinteseFala.cancel();
-        });
-
-        // Acessibilidade por teclado (Foco)
-        elemento.addEventListener('focus', () => {
-            if (audioAtivo) {
-                lerTexto(elemento.textContent);
-            }
-        });
-
-        // Interrompe ao perder o foco (Blur)
-        elemento.addEventListener('blur', () => {
-            sinteseFala.cancel();
-        });
-    });
-
-    // Função que configura e executa a voz
-    function lerTexto(texto) {
-        sinteseFala.cancel(); // Para audios sobrepostos
-        const pronunciamento = new SpeechSynthesisUtterance(texto);
-        pronunciamento.lang = 'pt-BR';
-        pronunciamento.rate = 1.0; // Velocidade normal da fala
-        pronunciamento.pitch = 1.0; // Tom normal
-        sinteseFala.speak(pronunciamento);
-    }
 });
