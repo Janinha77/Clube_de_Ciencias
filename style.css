@@ -1,93 +1,166 @@
-/* =========================================
-   CONTROLE RIGOROSO DO TAMANHO DAS FOTOS
-========================================= */
-.foto-membro, .foto-perfil {
-    width: 90px !important;
-    height: 90px !important;
-    max-width: 90px !important;
-    max-height: 90px !important;
-    border-radius: 50%;
-    object-fit: cover; /* Evita que a foto fique esticada */
-    border: 3px solid var(--cor-primaria, #0056B3);
-    margin: 0 auto 12px auto;
-    display: block;
+/* Variáveis de Alto Contraste */
+:root {
+    --fundo-principal: #000000;
+    --fundo-secundario: #1A1A1A;
+    --texto-principal: #FFFFFF;
+    --texto-destaque: #FFFF00;
+    --cor-foco: #00FFFF;
 }
 
-/* =========================================
-   ORGANIZAÇÃO DOS PROJETOS POR CATEGORIA
-========================================= */
-.categoria-projeto {
-    margin-bottom: 25px;
-    background: #ffffff;
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Foco visível para navegação por teclado */
+*:focus {
+    outline: 4px solid var(--cor-foco);
+    outline-offset: 4px;
+}
+
+header {
+    background-color: var(--fundo-secundario);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-bottom: 4px solid var(--texto-destaque);
 }
 
-.categoria-projeto h3 {
-    color: var(--cor-secundaria, #6A1B9A);
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--cor-primaria, #0056B3);
-    padding-bottom: 5px;
+.cabecalho-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.grid-projetos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.logos .logo {
+    max-width: 120px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.identificacao h1 {
+    color: var(--texto-destaque);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.aluno-destaque {
+    display: flex;
+    align-items: center;
     gap: 15px;
 }
 
-.card-projeto {
-    background-color: var(--bg-claro, #F4F7F6);
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 5px solid var(--cor-primaria, #0056B3);
+.foto-perfil, .foto-membro {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--texto-destaque);
+    object-fit: cover;
 }
 
-.card-projeto h4 {
-    color: var(--texto-escuro, #2C3E50);
-    margin-bottom: 8px;
-}
-
-/* Badges de Status dos Projetos */
-.badge {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-.status-planejado {
-    background-color: #E3F2FD;
-    color: #0D47A1;
-}
-
-.status-apresentado {
-    background-color: #E8F5E9;
-    color: #1B5E20;
-}
-
-/* CARD DOS CLUBISTAS */
-.membro-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
+.controles-acessibilidade {
+    margin-top: 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+button#btn-audio {
+    background-color: var(--texto-destaque);
+    color: var(--fundo-principal);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button#btn-audio:hover {
+    transform: scale(1.05);
+}
+
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--fundo-secundario);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: var(--texto-destaque);
+    margin-bottom: 15px;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--texto-destaque);
+    padding-bottom: 5px;
+}
+
+.lista-projetos {
+    list-style-type: none;
+}
+
+.lista-projetos li {
+    margin: 15px 0;
+}
+
+a {
+    color: var(--texto-destaque);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+a:hover, a:focus {
+    color: var(--cor-foco);
+    text-decoration: underline;
+}
+
+.grid-membros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.membro-card {
+    background-color: var(--fundo-principal);
+    padding: 20px;
+    border: 2px solid var(--texto-destaque);
+    border-radius: 10px;
+    text-align: center;
 }
 
 .membro-card h3 {
-    font-size: 1.1rem;
-    color: var(--cor-primaria, #0056B3);
-    margin-bottom: 5px;
+    color: var(--texto-destaque);
+    margin: 15px 0;
 }
 
-.membro-card .bio {
-    font-size: 0.95rem;
-    margin: 10px 0;
-    color: #555;
+.btn-lattes {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--fundo-secundario);
+    border: 2px solid var(--texto-destaque);
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--fundo-secundario);
+    border-top: 4px solid var(--texto-destaque);
 }

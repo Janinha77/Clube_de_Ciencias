@@ -1,42 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Controle do Painel
-    const btnAcessibilidade = document.getElementById('btn-acessibilidade-fixo');
-    const painel = document.getElementById('painel-acessibilidade');
-    
-    btnAcessibilidade.addEventListener('click', () => {
-        painel.classList.toggle('oculto');
-    });
-
-    // Aumento/Diminuição de Fonte
-    let tamanhoAtual = 18;
-    document.getElementById('btn-fonte-mais').addEventListener('click', () => {
-        if(tamanhoAtual < 26) tamanhoAtual += 2;
-        document.documentElement.style.setProperty('--tamanho-fonte', `${tamanhoAtual}px`);
-    });
-
-    document.getElementById('btn-fonte-menos').addEventListener('click', () => {
-        if(tamanhoAtual > 14) tamanhoAtual -= 2;
-        document.documentElement.style.setProperty('--tamanho-fonte', `${tamanhoAtual}px`);
-    });
-
-    // Alto Contraste
-    document.getElementById('btn-contraste').addEventListener('click', () => {
-        document.body.classList.toggle('alto-contraste');
-    });
-
-    // Lógica Básica de Leitura
+    let audioAtivo = false;
     const sinteseFala = window.speechSynthesis;
-    let lendo = false;
-    document.getElementById('btn-ouvir').addEventListener('click', () => {
-        if (lendo) {
-            sinteseFala.cancel();
-            lendo = false;
+    const btnAudio = document.getElementById('btn-audio');
+
+    // Alterna o estado do botão de áudio
+    btnAudio.addEventListener('click', () => {
+        audioAtivo = !audioAtivo;
+        
+        if (audioAtivo) {
+            btnAudio.textContent = "🔈 Áudio Ativado - Passe o mouse ou foque nos textos";
+            btnAudio.style.backgroundColor = "var(--cor-foco)";
+            btnAudio.style.color = "#000000";
         } else {
-            const texto = document.body.innerText;
-            const fala = new SpeechSynthesisUtterance(texto);
-            fala.lang = 'pt-BR';
-            sinteseFala.speak(fala);
-            lendo = true;
+            btnAudio.textContent = "🔊 Ativar Leitura por Áudio";
+            btnAudio.style.backgroundColor = "var(--texto-destaque)";
+            btnAudio.style.color = "var(--fundo-principal)";
+            sinteseFala.cancel();
         }
     });
+
+    // Seleciona todos os elementos marcados para leitura
+    const elementosLeitura = document.querySelectorAll('.leitura-audio');
+
+    elementosLeitura.forEach(elemento => {
+        // Leitura via mouse
+        elemento.addEventListener('mouseenter', () => {
+            if (audioAtivo) {
+                lerTexto(elemento.textContent);
+            }
+        });
+
+        elemento.addEventListener('mouseleave', () => {
+            if (audioAtivo) {
+                sinteseFala.cancel();
+            }
+        });
+
+        // Leitura via navegação por teclado (Tab)
+        elemento.addEventListener('focus', () => {
+            if (audioAtivo) {
+                lerTexto(elemento.textContent);
+            }
+        });
+
+        elemento.addEventListener('blur', () => {
+            if (audioAtivo) {
+                sinteseFala.cancel();
+            }
+        });
+    });
+
+    // Função de síntese de voz (Text-to-Speech)
+    function lerTexto(texto) {
+        sinteseFala.cancel();
+        const pronunciamento = new SpeechSynthesisUtterance(texto);
+        pronunciamento.lang = 'pt-BR';
+        pronunciamento.rate = 1.0;
+        pronunciamento.pitch = 1.0;
+        sinteseFala.speak(pronunciamento);
+    }
 });
