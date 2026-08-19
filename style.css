@@ -1,112 +1,93 @@
-:root {
-    --bg-claro: #F4F7F6;
-    --texto-escuro: #2C3E50;
-    --cor-primaria: #0056B3; /* Azul tecnologia */
-    --cor-secundaria: #6A1B9A; /* Roxo inovação */
-    --foco: #FF9800; /* Laranja para foco acessível */
-    --tamanho-fonte: 18px;
-}
-
-/* Modo Alto Contraste via classe JS */
-body.alto-contraste {
-    --bg-claro: #121212;
-    --texto-escuro: #FFFFFF;
-    --cor-primaria: #4FC3F7;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-claro);
-    color: var(--texto-escuro);
-    font-size: var(--tamanho-fonte);
-    line-height: 1.6;
-    transition: all 0.3s ease;
-}
-
-*:focus {
-    outline: 4px solid var(--foco);
-    outline-offset: 4px;
-}
-
-/* Cabeçalho 3D */
-.header-3d {
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid var(--cor-primaria);
-    padding: 20px 40px 0;
-}
-
-.cabecalho-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.bloco-logos { display: flex; gap: 15px; }
-.logo { width: 80px; height: 80px; object-fit: contain; }
-
-.identificacao { text-align: center; flex: 1; }
-.identificacao h1 { color: var(--cor-primaria); font-size: 2.2rem; }
-.identificacao h2 { color: var(--cor-secundaria); font-size: 1.2rem; }
-
-/* Menu */
-.menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 30px;
-    margin-top: 20px;
-    padding-bottom: 15px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: var(--texto-escuro);
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.menu a:hover { background: var(--cor-primaria); color: #fff; }
-
-/* Botão Acessibilidade */
-#btn-acessibilidade-fixo {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--cor-primaria);
-    color: white;
-    font-size: 2rem;
-    border: none;
+/* =========================================
+   CONTROLE RIGOROSO DO TAMANHO DAS FOTOS
+========================================= */
+.foto-membro, .foto-perfil {
+    width: 90px !important;
+    height: 90px !important;
+    max-width: 90px !important;
+    max-height: 90px !important;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+    object-fit: cover; /* Evita que a foto fique esticada */
+    border: 3px solid var(--cor-primaria, #0056B3);
+    margin: 0 auto 12px auto;
+    display: block;
 }
 
-#painel-acessibilidade {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    background: white;
-    padding: 15px;
+/* =========================================
+   ORGANIZAÇÃO DOS PROJETOS POR CATEGORIA
+========================================= */
+.categoria-projeto {
+    margin-bottom: 25px;
+    background: #ffffff;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.oculto { display: none !important; }
+.categoria-projeto h3 {
+    color: var(--cor-secundaria, #6A1B9A);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-primaria, #0056B3);
+    padding-bottom: 5px;
+}
 
-main { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-section { background: #fff; padding: 25px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.card-projeto {
+    background-color: var(--bg-claro, #F4F7F6);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-primaria, #0056B3);
+}
+
+.card-projeto h4 {
+    color: var(--texto-escuro, #2C3E50);
+    margin-bottom: 8px;
+}
+
+/* Badges de Status dos Projetos */
+.badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.status-planejado {
+    background-color: #E3F2FD;
+    color: #0D47A1;
+}
+
+.status-apresentado {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+}
+
+/* CARD DOS CLUBISTAS */
+.membro-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.membro-card h3 {
+    font-size: 1.1rem;
+    color: var(--cor-primaria, #0056B3);
+    margin-bottom: 5px;
+}
+
+.membro-card .bio {
+    font-size: 0.95rem;
+    margin: 10px 0;
+    color: #555;
+}
