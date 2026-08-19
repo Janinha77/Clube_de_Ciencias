@@ -67,3 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Função para expandir e recolher a biografia
+function toggleLerMais(botao) {
+    const card = botao.closest('.membro-card');
+    const textoCompleto = card.querySelector('.texto-completo');
+    const resumo = card.querySelector('.bio-resumo');
+
+    if (textoCompleto.classList.contains('oculto-texto')) {
+        textoCompleto.classList.remove('oculto-texto');
+        resumo.style.display = 'none';
+        botao.textContent = 'Ler menos';
+    } else {
+        textoCompleto.classList.add('oculto-texto');
+        resumo.style.display = 'block';
+        botao.textContent = 'Ler mais';
+    }
+}
