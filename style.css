@@ -1,10 +1,25 @@
-/* Variáveis de Alto Contraste */
+/* Variáveis para Tema Claro (Fundo Branco + Azul Escuro) */
 :root {
-    --fundo-principal: #000000;
-    --fundo-secundario: #1A1A1A;
+    --fundo-principal: #FFFFFF;
+    --fundo-secundario: #F0F4F8;
+    --texto-principal: #1A202C;
+    --texto-destaque: #003366; /* Azul Escuro no lugar do amarelo */
+    --cor-borda: #003366;
+    --cor-foco: #E65100;
+    --btn-bg: #003366;
+    --btn-texto: #FFFFFF;
+}
+
+/* Variáveis para Tema Escuro */
+body.modo-escuro {
+    --fundo-principal: #121212;
+    --fundo-secundario: #1E1E1E;
     --texto-principal: #FFFFFF;
-    --texto-destaque: #FFFF00;
-    --cor-foco: #00FFFF;
+    --texto-destaque: #64B5F6; /* Azul Claro para contraste no fundo escuro */
+    --cor-borda: #64B5F6;
+    --cor-foco: #FF9800;
+    --btn-bg: #64B5F6;
+    --btn-texto: #121212;
 }
 
 /* Reset básico e tipografia */
@@ -20,9 +35,10 @@ body {
     color: var(--texto-principal);
     line-height: 1.6;
     font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Foco visível para navegação por teclado */
+/* Foco visível para navegabilidade via teclado */
 *:focus {
     outline: 4px solid var(--cor-foco);
     outline-offset: 4px;
@@ -70,22 +86,25 @@ header {
 
 .controles-acessibilidade {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-button#btn-audio {
-    background-color: var(--texto-destaque);
-    color: var(--fundo-principal);
-    font-size: 1.2rem;
+.btn-controle {
+    background-color: var(--btn-bg);
+    color: var(--btn-texto);
+    font-size: 1.1rem;
     font-weight: bold;
-    padding: 15px 30px;
-    border: none;
+    padding: 12px 24px;
+    border: 2px solid var(--cor-borda);
     cursor: pointer;
     border-radius: 8px;
     transition: transform 0.2s, background-color 0.2s;
 }
 
-button#btn-audio:hover {
+.btn-controle:hover {
     transform: scale(1.05);
 }
 
@@ -100,6 +119,7 @@ section {
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 h2 {
@@ -154,6 +174,7 @@ a:hover, a:focus {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: var(--fundo-secundario);
+    color: var(--texto-destaque);
     border: 2px solid var(--texto-destaque);
     border-radius: 5px;
 }
