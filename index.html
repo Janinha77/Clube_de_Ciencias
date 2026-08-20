@@ -12,10 +12,10 @@
     <header>
         <div class="cabecalho-container">
             <div class="logos" tabindex="0">
-                <img src="Logo_Clube.png" alt="Logo_Clube" class="logo">
-                <img src="LOGO_CEMAG.png" alt="LOGO_CEMAG" class="logo">
-                <img src="Napi2.png" alt="Napi2" class="logo">
-                <img src="parana_faz_Ciencias.png" alt="Logo parana_faz_Ciencias" class="logo">
+                <img src="Logo_Clube.png" alt="Logo do Clube RISO" class="logo">
+                <img src="LOGO_CEMAG.png" alt="Logo do CEMAG" class="logo">
+                <img src="Napi2.png" alt="Logo Napi2" class="logo">
+                <img src="parana_faz_Ciencias.png" alt="Logo Paraná faz Ciência" class="logo">
             </div>
             <div class="identificacao">
                 <h1 class="leitura-audio" tabindex="0">Professora Orientadora: Janinha Aparecida Pereira</h1>
@@ -31,8 +31,7 @@
             <button id="btn-audio" class="btn-controle" aria-label="Ativar ou desativar o áudio do site" tabindex="0">
                 🔊 Ativar Leitura por Áudio
             </button>
-            <button id="btn-tema" class="btn-controle" aria-label="Alternar entre modo claro e modo escuro"
-                tabindex="0">
+            <button id="btn-tema" class="btn-controle" aria-label="Alternar entre modo claro e modo escuro" tabindex="0">
                 🌓 Modo Escuro
             </button>
         </div>
@@ -46,68 +45,88 @@
                 significa <strong>Robótica Inclusiva e Social Transformando Vidas</strong>. Nosso objetivo é promover a
                 inclusão através da tecnologia.
             </p>
-            <iframe width="560" height="315" src="https://www.youtube.com/playlist?list=PLVf0pzIUpufVO_QM76uYMr2RiQ28OpGZU"
-                title="Player de vídeo do YouTube" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLVf0pzIUpufVO_QM76uYMr2RiQ28OpGZU"
+                    title="Player de vídeo do YouTube" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </section>
 
         <section id="projetos">
             <h2 class="leitura-audio" tabindex="0">Projetos</h2>
-            <h3 class="leitura-audio" tabindex="0"> Futuros</h3>
+            
+            <h3 class="leitura-audio sub-titulo-projeto" tabindex="0">Futuros</h3>
             <ul class="lista-projetos">
-                <li><a href="#link-semaforo" class="leitura-audio" tabindex="0">Semáforo Inteligente e Assistivo</a>
-                    <p>A criação de um protótipo de semáforo inteligente e assistivo, tem como objetivo garantir a
+                <li>
+                    <a href="#link-semaforo" class="leitura-audio" tabindex="0">Semáforo Inteligente e Assistivo</a>
+                    <p class="leitura-audio">A criação de um protótipo de semáforo inteligente e assistivo tem como objetivo garantir a
                         segurança de todos os cidadãos, especialmente de estudantes e
                         pessoas com deficiência. A esquina do Colégio Estadual Manoel Antônio Gomes é
                         um ponto crítico, onde o intenso fluxo de veículos e pedestres, aliado à falta de
                         infraestrutura adequada, expõe todos a riscos de acidentes.</p>
                 </li>
-                <li><a href="#link-mao" class="leitura-audio" tabindex="0">Mão Robótica</a></li>
-                <p>
-                    O desenvolvimento de um protótipo de mão robótica com Arduino é uma
-                    atividade que combina aprendizado, criatividade e impacto social. É uma porta de
-                    entrada para o fascinante mundo da robótica, permitindo que o estudante explore
-                    conceitos como sensores, atuadores, controle e automação, estimulando a busca
-                    por soluções inovadoras para desafios complexos, como a criação de próteses mais
-                    acessíveis e eficientes.
-                </p>
-                <li><a href="#link-varal" class="leitura-audio" tabindex="0">Varal Automático Assistivo</a></li>
+                <li>
+                    <a href="#link-mao" class="leitura-audio" tabindex="0">Mão Robótica</a>
+                    <p class="leitura-audio">
+                        O desenvolvimento de um protótipo de mão robótica com Arduino é uma
+                        atividade que combina aprendizado, criatividade e impacto social. É uma porta de
+                        entrada para o fascinante mundo da robótica, permitindo que o estudante explore
+                        conceitos como sensores, atuadores, controle e automação, estimulando a busca
+                        por soluções inovadoras para desafios complexos, como a criação de próteses mais
+                        acessíveis e eficientes.
+                    </p>
                 </li>
-                <p>O protótipo de um varal automático assistivo, equipado com sensores de
-                    chuva, movimento, controle de velocidade, som e outras funcionalidades, representa
-                    uma inovação significativa no âmbito da casa inteligente e da acessibilidade. Essa
-                    solução oferece uma série de benefícios tanto para pessoas com mobilidade
-                    reduzida quanto para aqueles que buscam maior comodidade e eficiência no dia a
-                    dia.</p>
-                <h3 class="leitura-audio" tabindex="0"> FECCI</h3>
-                <li><a href="#https://docs.google.com/document/d/1aa5J9XB2OCcxW0GmEAmGm0_EBTJH1I3g/edit?usp=sharing&ouid=108304033263817009510&rtpof=true&sd=true"
-                        class="leitura-audio" tabindex="0">ESTAÇÃO INTELIGENTE DE PRODUÇÃO SUSTENTÁVEL:
-                        AUTOMAÇÃO AGRÍCOLA, GESTÃO HÍDRICA E ECONOMIA CIRCULAR NA TOMATICULTURA DE RESERVA - PR
+                <li>
+                    <a href="#link-varal" class="leitura-audio" tabindex="0">Varal Automático Assistivo</a>
+                    <p class="leitura-audio">O protótipo de um varal automático assistivo, equipado com sensores de
+                        chuva, movimento, controle de velocidade, som e outras funcionalidades, representa
+                        uma inovação significativa no âmbito da casa inteligente e da acessibilidade. Essa
+                        solução oferece uma série de benefícios tanto para pessoas com mobilidade
+                        reduzida quanto para aqueles que buscam maior comodidade e eficiência no dia a dia.</p>
+                </li>
+            </ul>
+
+            <h3 class="leitura-audio sub-titulo-projeto" tabindex="0">FECCI</h3>
+            <ul class="lista-projetos">
+                <li>
+                    <a href="https://docs.google.com/document/d/1aa5J9XB2OCcxW0GmEAmGm0_EBTJH1I3g/edit?usp=sharing&ouid=108304033263817009510&rtpof=true&sd=true"
+                        target="_blank" rel="noopener noreferrer" class="leitura-audio" tabindex="0">
+                        ESTAÇÃO INTELIGENTE DE PRODUÇÃO SUSTENTÁVEL: AUTOMAÇÃO AGRÍCOLA, GESTÃO HÍDRICA E ECONOMIA CIRCULAR NA TOMATICULTURA DE RESERVA - PR
                     </a>
                 </li>
-                <li><a href="#https://docs.google.com/document/d/1ph1gF96Ingr2cUNF1ig4CoFb5itGjacs/edit?usp=sharing&ouid=108304033263817009510&rtpof=true&sd=true"
-                        class="leitura-audio" tabindex="0">MENTE NA ARENA, MÃO NA MASSA: A RELEVÂNCIA PEDAGÓGICA E O
-                        IMPACTO NO DESENVOLVIMENTO DE COMPETÊNCIAS NA COMPETIÇÃO DE ROBÔ SUMÔ</a></li>
+                <li>
+                    <a href="https://docs.google.com/document/d/1ph1gF96Ingr2cUNF1ig4CoFb5itGjacs/edit?usp=sharing&ouid=108304033263817009510&rtpof=true&sd=true"
+                        target="_blank" rel="noopener noreferrer" class="leitura-audio" tabindex="0">
+                        MENTE NA ARENA, MÃO NA MASSA: A RELEVÂNCIA PEDAGÓGICA E O IMPACTO NO DESENVOLVIMENTO DE COMPETÊNCIAS NA COMPETIÇÃO DE ROBÔ SUMÔ
+                    </a>
                 </li>
-                <h3 class="leitura-audio" tabindex="0">FICIÊNCIA</h3>
-                <li><a href="#https://drive.google.com/file/d/1TVt26Z4hFYAffwBIR9YQL9blnoP32mKD/view?usp=sharing"
-                        class="leitura-audio" tabindex="0">ESTAÇÃO INTELIGENTE DE PRODUÇÃO SUSTENTÁVEL:
-                        AUTOMAÇÃO AGRÍCOLA, GESTÃO HÍDRICA E ECONOMIA CIRCULAR NA TOMATICULTURA DE RESERVA - PR</a>
-                </li>
-                <li><a href="#https://drive.google.com/file/d/1dbpczXes16-C7NYAxJialkbBTSySoXzE/view?usp=sharing"
-                        class="leitura-audio" tabindex="0">MENTE NA ARENA, MÃO NA MASSA: A RELEVÂNCIA
-                        PEDAGÓGICA E O IMPACTO NO DESENVOLVIMENTO DE COMPETÊNCIAS NA COMPETIÇÃO DE ROBÔ SUMÔ</a></li>
+            </ul>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/playlist?list=PLDjsa7Dh0TAo"
+            <h3 class="leitura-audio sub-titulo-projeto" tabindex="0">FICIÊNCIA</h3>
+            <ul class="lista-projetos">
+                <li>
+                    <a href="https://drive.google.com/file/d/1TVt26Z4hFYAffwBIR9YQL9blnoP32mKD/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" class="leitura-audio" tabindex="0">
+                        ESTAÇÃO INTELIGENTE DE PRODUÇÃO SUSTENTÁVEL: AUTOMAÇÃO AGRÍCOLA, GESTÃO HÍDRICA E ECONOMIA CIRCULAR NA TOMATICULTURA DE RESERVA - PR
+                    </a>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/1dbpczXes16-C7NYAxJialkbBTSySoXzE/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" class="leitura-audio" tabindex="0">
+                        MENTE NA ARENA, MÃO NA MASSA: A RELEVÂNCIA PEDAGÓGICA E O IMPACTO NO DESENVOLVIMENTO DE COMPETÊNCIAS NA COMPETIÇÃO DE ROBÔ SUMÔ
+                    </a>
+                </li>
+            </ul>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLDjsa7Dh0TAo"
                     title="Player de vídeo do YouTube" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
-            </ul>
-
-
+            </div>
         </section>
 
         <section id="membros">
@@ -151,10 +170,9 @@
 
                     <button class="btn-ler-mais" onclick="toggleLerMais(this)">Ler mais</button>
 
-                    <h4>Frase Motivacional</h4>
-                    <p> <i>“Na vida, não existe nada a temer, mas a entender.”-Marie Curie </i></p>
-                    <a href="http://lattes.cnpq.br/5034843518500233" class="btn-lattes leitura-audio">Currículo
-                        Lattes</a>
+                    <h4 class="leitura-audio">Frase Motivacional</h4>
+                    <p class="leitura-audio frase-citacao"><i>“Na vida, não existe nada a temer, mas a entender.” - Marie Curie</i></p>
+                    <a href="http://lattes.cnpq.br/5034843518500233" target="_blank" rel="noopener noreferrer" class="btn-lattes leitura-audio">Currículo Lattes</a>
                 </article>
 
                 <!-- Membro 3 -->
@@ -176,5 +194,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>

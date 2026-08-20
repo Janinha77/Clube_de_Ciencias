@@ -67,7 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// Função para expandir e recolher a biografia
+
+// ----------------------------------------------------
+// 3. Função Expandir e Recolher Biografia ("Ler Mais")
+// ----------------------------------------------------
 function toggleLerMais(botao) {
     const card = botao.closest('.membro-card');
     const textoCompleto = card.querySelector('.texto-completo');
